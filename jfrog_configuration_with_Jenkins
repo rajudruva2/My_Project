@@ -1,0 +1,76 @@
+Jfrog Artifactory Configuration with Jenkins
+
+Cat /opt/maven/conf/settings.xml
+In servers location,
+<servers>
+    <server>
+      <username>admin</username>
+      <password>Password123</password>
+      <id>central</id>
+    </server>
+    <server>
+      <username>admin</username>
+      <password>Password123</password>
+      <id>snapshots</id>
+    </server>
+  </servers>
+
+In Profiles location,
+
+<profiles>
+    <profile>
+      <repositories>
+        <repository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>mvn-jfrog-libs-release</name>
+          <url>https://10.100.23.3:8082/artifactory/mvn-jfrog-libs-release</url>
+        </repository>
+        <repository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>mvn-jfrog-libs-snapshot</name>
+          <url>https://10.100.23.3:8082/artifactory/mvn-jfrog-libs-snapshot</url>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <snapshots>
+            <enabled>false</enabled>
+          </snapshots>
+          <id>central</id>
+          <name>mvn-jfrog-libs-release</name>
+          <url>https://10.100.23.3:8082/artifactory/mvn-jfrog-libs-release</url>
+        </pluginRepository>
+        <pluginRepository>
+          <snapshots />
+          <id>snapshots</id>
+          <name>mvn-jfrog-libs-snapshot</name>
+          <url>https://10.100.23.3:8082/artifactory/mvn-jfrog-libs-snapshot</url>
+        </pluginRepository>
+      </pluginRepositories>
+      <id>artifactory</id>
+    </profile>
+  </profiles>
+  <activeProfiles>
+    <activeProfile>artifactory</activeProfile>
+  </activeProfiles>
+
+In Jfrog Artifactory,
+ 
+Welcome,admin > Set Me Up
+ 
+
+Click on Generate Settings
+Download snippet and Pom file will be generated
+ 
+Artifacts deploy,
+https://jfrog.com/knowledge-base/artifactory-how-to-upload-a-folder-with-its-content-to-artifactory/
+Artifacts download,
+https://search.maven.org/
+
+https://www.youtube.com/watch?v=WY29LtVQLhk
+
+
