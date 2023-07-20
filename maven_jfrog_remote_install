@@ -1,0 +1,38 @@
+Installing JFrog Artifactory:
+
+1.System Requirements
+   sudo -i
+ 
+
+2.Download the relevant package(for open source artifactory)
+  
+   wget https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/[RELEASE]/jfrog-artifactory-oss-[RELEASE]-linux.tar.gz
+
+3.Create a JFrog Home directory and move the downloaded installer archive into that directory
+
+   mkdir jfrog
+   mv jfrog-artifactory-<pro|oss|cpp-ce>-<version>-linux.tar.gz jfrog
+   cd jfrog
+
+4.Set the JFrog Home environment variable
+
+   export JFROG_HOME=<full path of the jfrog directory>
+   vi .bash_profile
+   (JFROG_HOME=$HOME/jfrog
+    PATH=$PATH:$HOME/bin:$JFROG_HOME)
+   source .bash_profile
+   
+
+5.Extract the contents of the compressed archive and move it into the artifactory directory.
+
+   tar -xvf jfrog-artifactory-<pro|oss|cpp-ce>-<version>-linux.tar.gz
+   mv artifactory-<pro|oss|cpp-ce>-<version> artifactory
+
+6.Run Artifactory as a Process
+
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl start
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl check  
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl stop (if it need to stop )
+
+7.finally access the server  
+   http://<public_ip>:8081
