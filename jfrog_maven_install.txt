@@ -1,0 +1,31 @@
+$  cd /opt
+$  sudo su
+$  apt install openjdk-11-jre
+$  wget https://releases.jfrog.io/artifactory/bintray-artifactory/org/artifactory/oss/jfrog-artifactory-oss/7.12.9/jfrog-artifactory-oss-7.12.9-base.tar.gz
+$ ls
+$  tar -xzvf jfrog-artifactory-oss-7.12.9-base.tar.gz
+$  mv artifactory-oss-7.9.2/ jfrog
+$  cd jfrog/app/bin/
+$  pwd
+   copy /opt/jfrog/app/bin/
+$ cd /usr/lib/jvm/java-11-openjdk-amd64/
+ copy /usr/lib/jvm/java-11-openjdk-amd64/
+$ vi /etc/profile.d/java.sh
+ paste like
+  export JAVA_HOME=/usr/lib/jvm/java-11-openjdk-amd64/
+  export JFROG_HOME=/opt/jfrog/
+  export PATH=$PATH:$JAVA_HOME/bin:$JFROG_HOME/app/bin/
+
+:wq! (save)
+$  source /etc/profile.d/java.sh
+$  echo $JAVA_HOME
+$  echo $JFROG_HOME
+
+Run Artifactory as a Process
+
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl start
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl check  
+   $JFROG_HOME/artifactory/app/bin/artifactoryctl stop (if it need to stop )
+
+finally access in the browser  
+  http://<public_ip>:8081
