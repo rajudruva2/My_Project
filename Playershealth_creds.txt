@@ -1,0 +1,36 @@
+AWS:
+https://playershealth.awsapps.com/start#/ ...yes
+
+Rajkumar.Kuncham@playershealth.com
+
+Azure cloud:
+https://portal.azure.com/#home ...No   only dashboard
+
+Github:
+https://github.com/Players-Health  ...yes
+
+
+Azure devops:
+https://dev.azure.com/PlayersHealth-Org01/ .....yes
+
+Jenkins:
+https://ci.playershealth.com/
+
+Jira:
+https://playershealth.atlassian.net/jira/your-work  ...yes
+
+https://playershealth.atlassian.net/wiki/spaces/DO/pages/2054750217/For+DevOps  ...yes
+
+
+
+1password:
+https://playershealth.1password.com/   ...yes
+Psswd:Rajuharshudruva2@
+
+
+REQ0040420
+RITM0040747
+
+Outlook:
+https://outlook.office.com/mail/
+
